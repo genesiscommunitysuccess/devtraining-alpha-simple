@@ -1,4 +1,5 @@
 package global.genesis
+
 import global.genesis.db.util.AbstractDatabaseTest
 import global.genesis.db.util.TestUtil
 import global.genesis.dictionary.GenesisDictionary
@@ -34,6 +35,7 @@ class AlphaTradeViewTest : AbstractDatabaseTest() {
             .setQuantity(100)
             .setDirection(Direction.BUY)
             .setTradeId(tradeId)
+            .setEnteredBy("JohnDoe")
             .build()
 
     @Test
