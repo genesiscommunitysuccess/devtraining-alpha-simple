@@ -22,10 +22,14 @@ dataServer {
             }
         }
     }
-    query("ALL_PRICES", TRADE){
-        fields{
+    query("ALL_PRICES", TRADE) {
+        fields {
+            TRADE_ID
+            INSTRUMENT_ID
             PRICE
             SYMBOL
+            ENTERED_BY
+            COUNTERPARTY_ID
         }
         where { trade -> trade.price > 10.0 }
     }
