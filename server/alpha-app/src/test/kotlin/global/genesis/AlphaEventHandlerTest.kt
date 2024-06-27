@@ -2,10 +2,9 @@ package global.genesis
 
 import global.genesis.commons.model.GenesisSet
 import global.genesis.db.DbRecord
-import global.genesis.dictionary.GenesisDictionary
 import global.genesis.gen.dao.Trade
-import global.genesis.gen.dao.enums.Direction
-import global.genesis.gen.dao.enums.TradeStatus
+import global.genesis.gen.dao.enums.alpha.trade.Direction
+import global.genesis.gen.dao.enums.alpha.trade.TradeStatus
 import global.genesis.message.core.event.Event
 import global.genesis.message.core.event.EventReply
 import global.genesis.testsupport.AbstractGenesisTestSupport
@@ -13,16 +12,16 @@ import global.genesis.testsupport.GenesisTestConfig
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.joda.time.DateTime
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import javax.inject.Inject
 
 class AlphaEventHandlerTest : AbstractGenesisTestSupport<GenesisSet>(
 
     GenesisTestConfig {
         packageName = "global.genesis.eventhandler.pal"
-        genesisHome = "/genesisHome/"
+        genesisHome = "/GenesisHome/"
         scriptFileName = "alpha-eventhandler.kts"
         parser = { it }
         initialDataFile = "data/TEST_DATA_EVENTHANDLER.csv"
